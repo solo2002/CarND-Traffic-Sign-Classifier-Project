@@ -25,6 +25,7 @@ Summary of The Project
 * Model Architecture
   LeNet is used in this project, so please refer LeNet Afchitecture (http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf)
 * Model Training
+
   (1) Batch size: since I am using my personal laptop, I decrease the batch size to 32.
   
   (2) Learning rate: 0.001, 0.005, and 0,01 are tested, and 0.001 is best.
