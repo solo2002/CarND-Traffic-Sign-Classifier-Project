@@ -8,23 +8,31 @@ In this project, you will use what you've learned about deep neural networks and
 To meet specifications, the project will require submitting three files: 
 * the Ipython notebook with the code
 * the code exported as an html file
-* a writeup report either as a markdown or pdf file 
+* a writeup report either as a markdown or pdf file  
 
-Creating a Great Writeup
----
-A great writeup should include the [rubric points](https://review.udacity.com/#!/rubrics/481/view) as well as your description of how you addressed each point.  You should include a detailed description of the code used in each step (with line-number references and code snippets where necessary), and links to other supporting documents or external references.  You should include images in your writeup to demonstrate how your code works with examples.  
-
-Overview of The Project
+Summary of The Project
 ---
 * Preprocessing
-  Four preprocessing techniques are implemented and tested: (1) converting to grayscale; (2) cropping the edge of image; (3) normalize data, (pixel - 128) / 128 is used here; (4) augmenting the brightness of image. First three procedures could significantly improve the model performance, while the last one is not. 
+  Four preprocessing techniques are implemented and tested: 
+  
+  (1) converting to grayscale; 
+  
+  (2) cropping the edge of image; 
+  
+  (3) normalize data, (pixel - 128) / 128 is used here; 
+  
+  (4) augmenting the brightness of image. First three procedures could significantly improve the model performance, while the last one is not. 
 * Model Architecture
   LeNet is used in this project, so please refer LeNet Afchitecture (http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf)
 * Model Training
   (1) Batch size: since I am using my personal laptop, I decrease the batch size to 32.
+  
   (2) Learning rate: 0.001, 0.005, and 0,01 are tested, and 0.001 is best.
+  
   (3) Epochs: 10, 20, 30, and 40 are examined, and 30 is selected.
+  
   (4) The range of cropped: 3, 4, and 5 pixels from each edge are tested, and cropping 4 pixels shows the best performance.
+  
   (5) Brightness augmenting: different levels of brightness augmenting are tested, but none of them shows significant improvement.
 * Solution Approach
   This trained model via using parameter-setting mentioned above gets 0.941 accuracy on validation data and 0.920 accuracy on testing data.
@@ -32,7 +40,7 @@ Overview of The Project
   The prediction accuracy is 1.00.
 * Analyze the softmax probabilities of the new images
   I have a little problem with softmax probabilities. Either 0. or 1. is printed when softmax(logits) is called. If without using softmax function, the numbers without converting to probabilites are shown.
-* Summary
+* Potential Further Improvements
   Besides tuning the model architecture, there is one more option we could try to further improve the model performance given more time. That is to increase the mount of training data, especially for those classes with much fewer number of data than other classes.  
   
 
