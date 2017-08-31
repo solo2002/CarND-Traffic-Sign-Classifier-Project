@@ -32,7 +32,6 @@ Report of The Project
 * Model Architecture
   LeNet is used in this project with minor modifications. Final model consisted of the following layers: 
   
-Fully Connected. Input = 120. Output = 84.
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x1 grayscale image   							| 
