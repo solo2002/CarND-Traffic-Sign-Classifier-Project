@@ -10,8 +10,20 @@ To meet specifications, the project will require submitting three files:
 * the code exported as an html file
 * a writeup report either as a markdown or pdf file  
 
-Summary of The Project
+Report of The Project
 ---
+* Data Set Summary & Exploration
+
+  (1) The size of training set is 34799.
+  
+  (2) The size of the validation set is 4410.
+  
+  (3) The size of test set is 12630.
+  
+  (4) The shape of a traffic sign image is 32 X 32 X 3 (RGB).
+  
+  (5) The number of unique classes/labels in the data set is 43.
+  
 * Preprocessing
   Four preprocessing techniques are implemented and tested: 
   
@@ -24,6 +36,20 @@ Summary of The Project
   (4) augmenting the brightness of image. First three procedures could significantly improve the model performance, while the last one is not. 
 * Model Architecture
   LeNet is used in this project, so please refer LeNet Afchitecture (http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf)
+  y final model consisted of the following layers:
+
+| Layer         		|     Description	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| Input         		| 32x32x3 RGB image   							| 
+| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
+| RELU					|												|
+| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
+| Convolution 3x3	    | etc.      									|
+| Fully connected		| etc.        									|
+| Softmax				| etc.        									|
+|						|												|
+|						|												|
+ 
 * Model Training
 
   (1) Batch size: since I am using my personal laptop, I decrease the batch size to 32.
@@ -40,7 +66,19 @@ Summary of The Project
 * Use the model to make predictions on 6 new images, please refer to the ipynb or its html file those images.
   The prediction accuracy is 1.00.
 * Analyze the softmax probabilities of the new images
-  I have a little problem with softmax probabilities. Either 0. or 1. is printed when softmax(logits) is called. If without using softmax function, the numbers without converting to probabilites are shown.
+
+  (1) The characteristic of these images that might make it particularly easy/difficult for the classifier to classify them.
+  
+  The overall quality of thoes selected images is good, which I think it is the major reason why this model performed well when testing those images. For instance, the size of trafic symbol in each image just fits the model, and all imgaes are clear and in fine exposure time. There is no doubt that the model's performance would become wrose when testing some low quality or unusual images.
+  
+  (2) Accuracy comparison
+  
+  The model perform better when testing selected 6 images than that of testing set (1 vs 0.915). One out of reasons could be the quality of image, which is discussed above.The other reason could be the number of images downloaded from internet is very small (6 vs 12630). Therefore, the performance of test data set can be more comprehensive and realiable.  
+  
+  (3) How certain or uncertain the model is of its predictions
+  
+  From the top 5 probabilities we can find that all the first ones in all 6 groups show much higher value than the others, which indicates that the model is pretty certain for its predictions. For instance, the top 5 probabilities of img1 are as follow: 1.00000000e+00, 1.11750893e-17, 6.02813607e-27, 9.32151298e-33, and 2.16458790e-34.
+  
 * Potential Further Improvements
   Besides tuning the model architecture, there is one more option we could try to further improve the model performance given more time. That is to increase the mount of training data, especially for those classes with much fewer number of data than other classes.  
   
